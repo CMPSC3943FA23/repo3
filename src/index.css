@@ -4,4 +4,10 @@
   
   .navbar-style {
     color: white !important;
-  }   
+  }
+
+  .dropdown-style {
+    right: 0;
+    left: auto;
+    position:absolute;
+  }

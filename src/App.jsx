@@ -45,6 +45,33 @@ export class NavBar extends Component {
                 </button>
               </form>
             </div>
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Account
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a class="dropdown-item" href="/#">
+                    Account Info
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/#">
+                    Saved for later
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/#">
+                    About Us
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </nav>
       </React.Fragment>
