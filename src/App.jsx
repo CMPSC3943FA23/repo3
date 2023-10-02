@@ -40,11 +40,14 @@ export class NavBar extends Component {
                   placeholder="Search"
                   aria-label="Search"
                 />
-                <button className="btn btn-outline-light" type="submit">
+                <button className="btn btn-outline-light button" type="submit">
                   Search
                 </button>
               </form>
             </div>
+            <button className="btn btn-outline-light button" button>
+              Cart
+            </button>
             <div class="dropdown">
               <button
                 class="btn btn-secondary dropdown-toggle"
@@ -54,7 +57,7 @@ export class NavBar extends Component {
               >
                 Account
               </button>
-              <ul class="dropdown-menu dropdown-menu-end">
+              <ul class="dropdown-menu dropdown-menu-end button">
                 <li>
                   <a class="dropdown-item" href="/#">
                     Account Info
