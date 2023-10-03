@@ -1,11 +1,26 @@
 import React, { Component } from "react";
-import MetropolitanMuseum from "./components/MetropolitanMuseum";
+import ShoppingCartPopup from './ShoppingCart'; // Import the shopping cart component
+
 export class NavBar extends Component {
+
+  constructor(cart) {
+    super(cart);
+    this.state = {
+      showCart: false, // Disables the shopping cart when the page is initially loaded
+    };
+  }
+
+  toggleCart = () => {
+    this.setState((prevState) => ({
+      showCart: !prevState.showCart, // Toggle the value (show/hide)
+    }));
+  }
+
   render() {
     return (
       <React.Fragment>
         <nav
-          className="navbar navbar-expand-lg bg-primary navbar-style"
+          className="navbar navbar-expand-lg bg-dark navbar-style"
           data-bs-theme="dark"
         >
           <div className="container-fluid">
@@ -28,11 +43,17 @@ export class NavBar extends Component {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <a className="nav-link" href="/#">
-                    Home
-                  </a>
-                </li>
+              <div class="dropdown">
+                 <button class="btn btn-secondary dropdown-toggle  pages-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 <i class="fa fa-home" aria-hidden="true"></i>
+                    &nbsp;Pages
+                    </button>
+                    <ul class="dropdown-menu">
+                       <li><a class="dropdown-item" href="#">Home</a></li>
+                       <li><a class="dropdown-item" href="#">Artist</a></li>
+                       <li><a class="dropdown-item" href="#">Art</a></li>
+                    </ul>
+              </div>
               </ul>
               <form className="d-flex" role="search">
                 <input
@@ -41,24 +62,20 @@ export class NavBar extends Component {
                   placeholder="Search"
                   aria-label="Search"
                 />
-                <button className="btn btn-outline-light button" type="submit">
-                  Search
+                <button className="btn btn-outline-light" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
             </div>
-            <button className="btn btn-outline-light button" button>
-              Cart
-            </button>
             <div class="dropdown">
               <button
-                class="btn btn-secondary dropdown-toggle"
+                class="btn btn-secondary dropdown-toggle btn-account"
                 type="button"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Account
-              </button>
-              <ul class="dropdown-menu dropdown-menu-end button">
+                aria-expanded="false">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+              </button>             
+              <ul class="dropdown-menu dropdown-menu-end">
                 <li>
                   <a class="dropdown-item" href="/#">
                     Account Info
@@ -76,10 +93,22 @@ export class NavBar extends Component {
                 </li>
               </ul>
             </div>
+            <a
+              href="/cart"
+              className="btn btn-light btn-cart"
+              data-bs-toggle="button"
+              onClick={this.toggleCart} // Add an onClick handler to toggle the cart
+              >           
+              <i className="fas fa-shopping-cart"></i>
+              </a>
+              {this.state.showCart && <ShoppingCartPopup/>}
+
           </div>
         </nav>
-        <MetropolitanMuseum></MetropolitanMuseum>
+        
       </React.Fragment>
     );
   }
 }
+
+export default NavBar;
