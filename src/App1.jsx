@@ -43,11 +43,17 @@ export class NavBar extends Component {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <a className="nav-link" href="/#">
-                    Home
-                  </a>
-                </li>
+              <div class="dropdown">
+                 <button class="btn btn-secondary dropdown-toggle  pages-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 <i class="fa fa-home" aria-hidden="true"></i>
+                    &nbsp;Pages
+                    </button>
+                    <ul class="dropdown-menu">
+                       <li><a class="dropdown-item" href="#">Home</a></li>
+                       <li><a class="dropdown-item" href="#">Artist</a></li>
+                       <li><a class="dropdown-item" href="#">Art</a></li>
+                    </ul>
+              </div>
               </ul>
               <form className="d-flex" role="search">
                 <input
@@ -57,30 +63,18 @@ export class NavBar extends Component {
                   aria-label="Search"
                 />
                 <button className="btn btn-outline-light" type="submit">
-                  Search
+                <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
             </div>
             <div class="dropdown">
               <button
-                class="btn btn-secondary dropdown-toggle"
+                class="btn btn-secondary dropdown-toggle btn-account"
                 type="button"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Account
-              </button>
-              
-              <a
-              href="/cart"
-              className="btn btn-light btn-cart"
-              data-bs-toggle="button"
-              onClick={this.toggleCart} // Add an onClick handler to toggle the cart
-              >           
-              <i className="fas fa-shopping-cart"></i>
-              </a>
-              {this.state.showCart && <ShoppingCartPopup/>}
-             
+                aria-expanded="false">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+              </button>             
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
                   <a class="dropdown-item" href="/#">
@@ -99,6 +93,16 @@ export class NavBar extends Component {
                 </li>
               </ul>
             </div>
+            <a
+              href="/cart"
+              className="btn btn-light btn-cart"
+              data-bs-toggle="button"
+              onClick={this.toggleCart} // Add an onClick handler to toggle the cart
+              >           
+              <i className="fas fa-shopping-cart"></i>
+              </a>
+              {this.state.showCart && <ShoppingCartPopup/>}
+
           </div>
         </nav>
         

@@ -104,7 +104,7 @@ class ShoppingCartPopup extends Component {
                     </div>
                 
                 <button onClick={() => this.removeFromCart(product.id)} className="remove-button">
-                  -
+                <i class="fa fa-minus" aria-hidden="true"></i>
                 </button>
                 </div>
               </li>
