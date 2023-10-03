@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MetropolitanMuseum from "./components/MetropolitanMuseum";
 export class NavBar extends Component {
   render() {
     return (
@@ -74,6 +75,7 @@ export class NavBar extends Component {
             </div>
           </div>
         </nav>
+        <MetropolitanMuseum></MetropolitanMuseum>
       </React.Fragment>
     );
   }
