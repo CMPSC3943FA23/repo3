@@ -3,7 +3,7 @@ import React from "react";
 const PhotoContainer = (props) => {
   const displayPhotos = () => {
     return props.photos.map((photo) => {
-      return <Photo url={photo._links.thumbnail.href} />;
+      return <Photo url={photo.primaryImage} />;
     });
   };
 
