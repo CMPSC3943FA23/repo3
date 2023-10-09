@@ -4,6 +4,7 @@ const PhotoContainer = (props) => {
   const displayPhotos = () => {
     //console.log(props);
     return props.photos.map((photo) => {
+
       //console.log(photo.primaryImage);
       return <Photo url={photo.primaryImageSmall} />;
     });

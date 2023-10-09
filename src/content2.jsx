@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import PhotoContainer from "./photoContainer";
+
 const testEndpoint =
   "https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=True&isPublicDomain=True&medium=Paintings&q=Landscape";
 const eachEndpoint =
   "https://collectionapi.metmuseum.org/public/collection/v1/objects/";
+
 
 export class Content2 extends Component {
   constructor() {
@@ -13,6 +15,7 @@ export class Content2 extends Component {
       photos: [],
     };
   }
+
 
   async getID() {
     const res = await fetch(testEndpoint);
@@ -41,13 +44,15 @@ export class Content2 extends Component {
         i++;
       }
     }
-    console.log(this.state.photos);
+    //console.log(this.state.photos);
   }
 
   componentDidMount() {
     this.getPhotoList();
     console.log(this.state.photos);
   }
+
+
 
   render() {
     return (
