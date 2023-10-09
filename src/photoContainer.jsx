@@ -2,24 +2,27 @@ import React from "react";
 
 const PhotoContainer = (props) => {
   const displayPhotos = () => {
+    //console.log(props);
     return props.photos.map((photo) => {
-      return <Photo url={photo.primaryImage} />;
+
+      //console.log(photo.primaryImage);
+      return <Photo url={photo.primaryImageSmall} />;
     });
   };
 
   return (
     <>
-      <section>{displayPhotos()}</section>
+      <div id="img-wrapper">{displayPhotos()}</div>
     </>
   );
 };
 
 const Photo = (props) => {
-  console.log(props);
+  //console.log(props.primaryImage);
   return (
-    <section>
-      <img src={props.url} alt="result photo" />
-    </section>
+    <div id="img-wrapper">
+      <img src={props.url} alt="result" />
+    </div>
   );
 };
 
